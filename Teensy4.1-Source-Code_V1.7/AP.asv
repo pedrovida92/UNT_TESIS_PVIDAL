@@ -1,0 +1,14 @@
+clc, clear all, close all;
+
+M = readmatrix("AP_LOAD.csv");
+
+L = {};
+
+NUM_POINTS = 5;
+NUM_CYCLES = length(M)/NUM_POINTS;
+
+for i=1:NUM_CYCLES
+    L.append(M((i-1)*NUM_POINTS+1:i*NUM_POINTS,:));
+end
+
+L 
